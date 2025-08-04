@@ -69,10 +69,12 @@
 }
 
 .post-form {
+    outline: dashed 20px;
+    background-color: black;
 }
 
 .post-form-name {
-    margin-top:3%;
+    margin-top:20%;
 }
 
 .post-form-message {
