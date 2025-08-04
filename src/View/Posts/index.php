@@ -19,7 +19,7 @@
 
 <body>
     <div class="header">
-        <span>N（ベータバージョン）</span>
+        <span>SCUBA</span>
     </div>
 
     <br>
@@ -51,6 +51,7 @@
                 <?php if ($this->get('posts')) : ?>
                     <?php foreach ($this->get('posts') as $post) : ?>
                         <!-- 投稿カード -->
+                        
                         <div class="post">
                             <div class="post-icon">
                                 <img src="/imgs/egg_purple.png" class="post-image" alt="egg_icon">

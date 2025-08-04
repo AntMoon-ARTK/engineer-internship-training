@@ -14,10 +14,10 @@ class Post
      * @param string $name 投稿者名
      * @param string $message 日報内容
      */
-    public function save(string $name, string $message, string $password): void
+    public function save(string $name, string $message, $password): void
     {
         $pdo = $this->dbConnect();
-        $query = "INSERT INTO posts(`name`, `message`) VALUE('$name', '$message')";
+        $query = "INSERT INTO posts(`name`, `message`,`password`) VALUE('$name', '$message','$password')";
         $pdo->query($query);
     }
 
