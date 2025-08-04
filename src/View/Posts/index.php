@@ -36,6 +36,10 @@
                     <h4>投稿文</h4>
                     <textarea id="message" name="message" class="post-form-message-text" placeholder="投稿内容をここに入力してください。" maxlength="140" required></textarea>
                 </div>
+                <div class="post-form-password">
+                    <h4>パスワード</h4>
+                    <input id="password" name="password" class="post-form-password-input" placeholder="パスワードを設定する場合はこちら。" maxlength="10" required>
+                </div>
 
                 <div class="post-form-submit">
                     <button type="submit" class="post-form-submit-button">投稿</button>
@@ -52,8 +56,8 @@
                                 <img src="/imgs/egg_purple.png" class="post-image" alt="egg_icon">
                             </div>
                             <div class="post-info" data-id="<?=$post['id']?>">
-                                <input type="text" class="post-name post-not-edit-input" value="{名前}" readonly><br>
-                                <textarea class="post-text post-not-edit-textarea" readonly>Hello, world</textarea>
+                                <input type="text" class="post-name post-not-edit-input" value=<?=$post['name']?> readonly><br>
+                                <textarea class="post-text post-not-edit-textarea" readonly><?=$post['message']?></textarea>
                                 <div class="post-action">
                                     <button type="button" class="post-action-btn edit-btn" onclick="editPost(this)">✒️編集</button>
                                     <button type="button" class="post-action-btn delete-btn" onclick="deletePost(this)">🗑削除</button>

@@ -59,5 +59,23 @@
 }
 
 .header {
-    background-color: aqua;
+    font-size: larger;
+    font-style:inherit;
+    color:navy;
+    background-color: aliceblue;
+    text-align: center;
+    margin-top: 7%;
+
+}
+
+.post-form {
+}
+
+.post-form-name {
+    margin-top:3%;
+}
+
+.post-form-message {
+    margin-top: 3%;
+
 }

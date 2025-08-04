@@ -14,7 +14,7 @@ class Post
      * @param string $name 投稿者名
      * @param string $message 日報内容
      */
-    public function save(string $name, string $message): void
+    public function save(string $name, string $message, string $password): void
     {
         $pdo = $this->dbConnect();
         $query = "INSERT INTO posts(`name`, `message`) VALUE('$name', '$message')";
@@ -30,10 +30,8 @@ class Post
      */
     public function update(int $id, string $name, string $message): void
     {
-        // 未実装
-        // 必須課題3:投稿更新機能
         $pdo = $this->dbConnect();
-        $query = "<ここにクエリを入力します>";
+        $query = "UPDATE `posts` SET `name` = '$name', `message` = '$message' WHERE `id` = $id";
         $pdo->query($query);
     }
 
@@ -44,8 +42,9 @@ class Post
      */
     public function delete(int $id): void
     {
-        // 未実装
-        // 応用課題:投稿削除機能
+        $pdo = $this->dbConnect();
+        $query = "DELETE FROM `posts` WHERE `id` = $id";
+        $pdo->query($query);
     }
 
     /**
