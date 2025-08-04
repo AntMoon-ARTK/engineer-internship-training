@@ -19,7 +19,7 @@
 
 <body>
     <div class="header">
-        <span>SCUBA</span>
+        <span>SCUBA（ベータバージョン）</span>
     </div>
 
     <br>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="post-form-password">
                     <h4>パスワード</h4>
-                    <input id="password" name="password" class="post-form-password-input" placeholder="パスワードを設定する場合はこちら。" maxlength="10" required>
+                    <input id="password" name="password" class="post-form-password-input" placeholder="パスワードを設定する場合はこちら。" maxlength="10" >
                 </div>
 
                 <div class="post-form-submit">
@@ -51,17 +51,20 @@
                 <?php if ($this->get('posts')) : ?>
                     <?php foreach ($this->get('posts') as $post) : ?>
                         <!-- 投稿カード -->
-                        
                         <div class="post">
                             <div class="post-icon">
                                 <img src="/imgs/egg_purple.png" class="post-image" alt="egg_icon">
                             </div>
                             <div class="post-info" data-id="<?=$post['id']?>">
-                                <input type="text" class="post-name post-not-edit-input" value=<?=$post['name']?> readonly><br>
-                                <textarea class="post-text post-not-edit-textarea" readonly><?=$post['message']?></textarea>
-                                <div class="post-action">
-                                    <button type="button" class="post-action-btn edit-btn" onclick="editPost(this)">✒️編集</button>
-                                    <button type="button" class="post-action-btn delete-btn" onclick="deletePost(this)">🗑削除</button>
+                                    <?php if ($post['password'] === null) : ?> 
+                                    <input type="text" class="post-name post-not-edit-input" value=<?=$post['name']?> readonly><br>
+                                    <textarea class="post-text post-not-edit-textarea" readonly><?=$post['message']?></textarea>
+                                    <div class="post-action">
+                                        <button type="button" class="post-action-btn edit-btn" onclick="editPost(this)">✒️編集</button>
+                                        <button type="button" class="post-action-btn delete-btn" onclick="deletePost(this)">🗑削除</button>
+                                    <?php else: ?>
+                                    <span>まだ何も投稿されていません</span>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
