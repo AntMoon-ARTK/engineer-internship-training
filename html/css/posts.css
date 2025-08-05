@@ -69,15 +69,25 @@
 }
 
 .post-form {
-    outline: dashed 20px;
-    background-color: black;
+    margin-left: 20%;
+    margin-right: 20%;
+    display:flex;
 }
 
 .post-form-name {
-    margin-top:20%;
+    margin:3%;
 }
 
 .post-form-message {
-    margin-top: 3%;
+    margin: 3%;
 
+}
+
+.post-form-password{
+    margin:3%;
+}
+
+.post-form-submit{
+    margin-top: auto;
+    weight:30%;
 }
