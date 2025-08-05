@@ -66,6 +66,7 @@
                                     <input type="text" class="post-name post-not-edit-input" value=<?=$post['name']?> readonly><br>
                                     <span>鍵付きの投稿です</span>
                                     <button type="button" class="post-action-btn password-btn" onclick="password(this)">PASSWORD</button>
+                                    <input id="password_a" name="password_a" class="post-form-password-input" placeholder="パスワードを入力" maxlength="10" >
                                     <?php endif; ?>
                                 </div>
                             </div>
