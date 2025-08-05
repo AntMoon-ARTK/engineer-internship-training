@@ -19,7 +19,7 @@
 
 <body>
     <div class="header">
-        <span>SCUBA（ベータバージョン）</span>
+        <span>KEY</span>
     </div>
 
     <br>
@@ -28,22 +28,23 @@
         <div>
             <!-- 投稿フォーム -->
             <form method="POST" action="/Posts/create" class="post-form">
-                <div class="post-form-name">
-                    <h4>名前</h4>
-                    <input type="text" id="name" name="name" class="post-form-name-input" placeholder="あなたの名前を入力してください。" maxlength="30" required>
-                </div>
-                <div class="post-form-message">
-                    <h4>投稿文</h4>
-                    <textarea id="message" name="message" class="post-form-message-text" placeholder="投稿内容をここに入力してください。" maxlength="140" required></textarea>
-                </div>
-                <div class="post-form-password">
-                    <h4>パスワード</h4>
-                    <input id="password" name="password" class="post-form-password-input" placeholder="パスワードを設定する場合はこちら。" maxlength="10" >
-                </div>
-
-                <div class="post-form-submit">
-                    <button type="submit" class="post-form-submit-button">投稿</button>
-                </div>
+                <div class="post-form-main">
+                    <div class="post-form-name">
+                        <h4>名前</h4>
+                        <input type="text" id="name" name="name" class="post-form-name-input" placeholder="あなたの名前を入力してください。" maxlength="30" required>
+                    </div>
+                    <div class="post-form-message">
+                        <h4>投稿文</h4>
+                        <textarea id="message" name="message" class="post-form-message-text" placeholder="投稿内容をここに入力してください。" maxlength="140" required></textarea>
+                    </div>
+                    <div class="post-form-password">
+                        <h4>パスワード</h4>
+                        <input id="password" name="password" class="post-form-password-input" placeholder="パスワードを設定する場合はこちら。" maxlength="10" >
+                    </div>
+                    <div class="post-form-submit">
+                        <button type="submit" class="post-form-submit-button">投稿</button>
+                    </div>
+</div>
             </form>
             <hr>
             <!-- 投稿一覧 -->
@@ -57,16 +58,27 @@
                             </div>
                             <div class="post-info" data-id="<?=$post['id']?>">
                                     <?php if (empty($post['password'])) : ?> 
-                                    <input type="text" class="post-name post-not-edit-input" value=<?=$post['name']?> readonly><br>
-                                    <textarea class="post-text post-not-edit-textarea" readonly><?=$post['message']?></textarea>
-                                    <div class="post-action">
-                                        <button type="button" class="post-action-btn edit-btn" onclick="editPost(this)">✒️編集</button>
-                                        <button type="button" class="post-action-btn delete-btn" onclick="deletePost(this)">🗑削除</button>
+                                        <input type="text" class="post-name post-not-edit-input" value=<?=$post['name']?> readonly><br>
+                                        <textarea class="post-text post-not-edit-textarea" readonly><?=$post['message']?></textarea>
+                                        <div class="post-action">
+                                            <button type="button" class="post-action-btn edit-btn" onclick="editPost(this)">✒️編集</button>
+                                            <button type="button" class="post-action-btn delete-btn" onclick="deletePost(this)">🗑削除</button>
                                     <?php else: ?>
-                                    <input type="text" class="post-name post-not-edit-input" value=<?=$post['name']?> readonly><br>
-                                    <span>鍵付きの投稿です</span>
-                                    <button type="button" class="post-action-btn password-btn" onclick="password(this)">PASSWORD</button>
-                                    <input id="password_a" name="password_a" class="post-form-password-input" placeholder="パスワードを入力" maxlength="10" >
+                                        <div data-password=<?=($post['password'])?> class=password-div>
+                                            <input type="text" class="post-name post-not-edit-input" value=<?=$post['name']?> readonly><br>
+                                            <span class="post-text">鍵付きの投稿です</span>
+                                        <div class="password_item">
+                                            <input id="password_a" class="password-a" name="password-a" class="post-form-password-input" placeholder="パスワードを入力" maxlength="10" >
+                                            <button type="button" class="post-action-btn password-btn" onclick="passwordFun(this)">PASSWORD</button>
+                                            <button type="button" class="post-action post-action-btn delete-btn" onclick="deletePost(this)">🗑削除</button>
+                                        </div>
+                                        </div>
+                                        <div class=hidden-post hidden>
+                                            <input type="text" class="post-name post-not-edit-input" value=<?=$post['name']?> readonly><br>
+                                            <textarea class="post-text post-not-edit-textarea" readonly><?=$post['message']?></textarea>
+                                            <div class="post-action">
+                                            </div>
+                                        </div>
                                     <?php endif; ?>
                                 </div>
                             </div>

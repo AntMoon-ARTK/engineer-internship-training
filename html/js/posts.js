@@ -52,3 +52,18 @@ const deletePost = (self) => {
         }
     }
 }
+
+const passwordFun = (self) => {
+    const password_div = self.parentNode;
+    const password_input = password_div.querySelector('.password-a');
+    const password = password_input.value;
+    const correct_password=password_div.dataset.password;
+    console.log(password);
+    console.log(correct_password);
+    
+    if (password === correct_password){
+        const hidden_div = password_div.nextElementSibling;
+        hidden_div.hidden = false;
+        password_div.hidden = true;
+    }
+}

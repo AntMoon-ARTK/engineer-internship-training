@@ -5,6 +5,11 @@
 /* 投稿に関するCSS */
 .post {
     display: flex;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top:1%;
+    border-bottom: 1px solid #000000;
+
 }
 
 .post-icon {
@@ -17,10 +22,14 @@
 
 .post-name {
     font-weight: bold;
+    margin-left:1%;
+    font-size:160%;
 }
 
 .post-text {
     width: 100%;
+    margin-left:3%;
+    font-size:130%;
 }
 
 .post-info {
@@ -32,6 +41,12 @@
     position: absolute;
     bottom: 0px;
     right: 0px;
+}
+
+.password_item{
+    width: 100%;
+    margin-left:3%;
+    font-size:120%;
 }
 
 /* inputのデフォルトスタイルをリセット */
@@ -59,35 +74,40 @@
 }
 
 .header {
-    font-size: larger;
     font-style:inherit;
-    color:navy;
-    background-color: aliceblue;
+    color:darkslategrey;
+    background-color: lightgray;
     text-align: center;
-    margin-top: 7%;
+    margin-top: 3%;
+    font-size:400%;
 
 }
 
 .post-form {
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
     display:flex;
+    
 }
 
-.post-form-name {
-    margin:3%;
+.post-form-message{
+    margin-top:5%;
 }
 
-.post-form-message {
-    margin: 3%;
-
-}
-
-.post-form-password{
-    margin:3%;
+.post-form-sub{
+    margin:10%;
 }
 
 .post-form-submit{
-    margin-top: auto;
-    weight:30%;
+    margin-top:20%;
+}
+
+input.post-form-name-input{
+    width:150%;
+
+}
+
+textarea.post-form-message-text{
+    width:250%;
+    line-height: 2;
 }
