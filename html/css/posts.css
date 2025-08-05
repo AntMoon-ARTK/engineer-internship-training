@@ -84,18 +84,21 @@
 }
 
 .post-form {
-    margin-left: 10%;
-    margin-right: 10%;
     display:flex;
-    
+    align-items:last baseline;
+    margin-left:12%;
+    margin-bottom:5%;
+}
+.post-form-main{
+    margin-left:10%;
+}
+
+.post-fotm-name{
+    margin-top:10%;
 }
 
 .post-form-message{
-    margin-top:5%;
-}
-
-.post-form-sub{
-    margin:10%;
+    margin-top:10%;
 }
 
 .post-form-submit{
@@ -111,3 +114,8 @@ textarea.post-form-message-text{
     width:250%;
     line-height: 2;
 }
+
+logo-image{
+    margin-right:3%;
+}
+

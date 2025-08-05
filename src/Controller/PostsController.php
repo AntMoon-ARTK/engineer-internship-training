@@ -20,7 +20,7 @@ class PostsController extends AppController
      */
     public function index(): void
     {
-        $pageName = 'HOME / SCUBA';
+        $pageName = 'HOME / iKey';
         $this->assign('pageName', $pageName);
 
         $post = new Post();

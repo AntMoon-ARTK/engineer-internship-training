@@ -19,7 +19,6 @@
 
 <body>
     <div class="header">
-        <span>KEY</span>
     </div>
 
     <br>
@@ -28,6 +27,7 @@
         <div>
             <!-- 投稿フォーム -->
             <form method="POST" action="/Posts/create" class="post-form">
+                <img class="logo-image"src="imgs/logo.jpg"alt="Grapefruit slice atop a pile of other slices"width="300px"height="300px" />
                 <div class="post-form-main">
                     <div class="post-form-name">
                         <h4>名前</h4>
@@ -67,15 +67,13 @@
                                         <div data-password=<?=($post['password'])?> class=password-div>
                                             <input type="text" class="post-name post-not-edit-input" value=<?=$post['name']?> readonly><br>
                                             <span class="post-text">鍵付きの投稿です</span>
-                                        <div class="password_item">
                                             <input id="password_a" class="password-a" name="password-a" class="post-form-password-input" placeholder="パスワードを入力" maxlength="10" >
                                             <button type="button" class="post-action-btn password-btn" onclick="passwordFun(this)">PASSWORD</button>
-                                            <button type="button" class="post-action post-action-btn delete-btn" onclick="deletePost(this)">🗑削除</button>
                                         </div>
-                                        </div>
-                                        <div class=hidden-post hidden>
+                                        <div class=hidden-post post-info hidden>
                                             <input type="text" class="post-name post-not-edit-input" value=<?=$post['name']?> readonly><br>
                                             <textarea class="post-text post-not-edit-textarea" readonly><?=$post['message']?></textarea>
+                                            <button type="button" class="post-action post-action-btn delete-btn" onclick="deletePost(this)">🗑削除</button>
                                             <div class="post-action">
                                             </div>
                                         </div>
